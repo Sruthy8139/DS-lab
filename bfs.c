@@ -10,7 +10,7 @@ int front = -1, rear = -1;
 int queue[MAX_SIZE];
 
 void enqueue(int data){
-if(rear = n - 1){
+if(rear == n - 1){
 printf("Queue is full");
 } else if(front == -1 && rear == -1){
 front = 0;
@@ -26,11 +26,11 @@ void dequeue(){
 if(front == -1 && rear == -1){
 printf("Queue is empty \n");
 } else if(front == rear){
-printf("The deleted element is : %d \n",queue[front]);
+//printf("The deleted element is : %d \n",queue[front]);
 front = -1;
 rear = -1;
 } else {
-printf("The deleted element is : %d \n",queue[front]);
+//printf("The deleted element is : %d \n",queue[front]);
 front++;
 }
 }
@@ -42,12 +42,12 @@ enqueue(startIndex);
 while(front != -1){
 int node = queue[front];
 dequeue();
-printf("The visited node is %d : ",nodevalues[node]);
+printf("The visited node is %d : \n",nodevalues[node]);
 for(int i = 0; i < n; i++){
 if(graph[node][i] == 1 && visited[i] == 0){
 visited[i] = 1;
-dequeue();
-}
+enqueue(i);
+}	
 }
 }
 return 0;
