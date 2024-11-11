@@ -39,10 +39,11 @@ int bfs(int startIndex){
 visited[startIndex] = 1;
 enqueue(startIndex);
 
+printf("The visited node is \t");
 while(front != -1){
 int node = queue[front];
 dequeue();
-printf("The visited node is %d : \n",nodevalues[node]);
+printf("%d \t",nodevalues[node]);
 for(int i = 0; i < n; i++){
 if(graph[node][i] == 1 && visited[i] == 0){
 visited[i] = 1;
@@ -71,7 +72,7 @@ visited[i] = 0;
 printf("Enter 0 or 1 if there is an edge between the vertices \n");
 for(int i = 0; i < n; i++){
 for(int j = i + 1;j < n; j++){
-printf("is there an edge between node %d and node %d (0/1) :", nodevalues[i],nodevalues[j]);
+printf("is there an edge between node %d and node %d enter 1 else enter 0 :", nodevalues[i],nodevalues[j]);
 int edge;
 scanf("%d",&edge);
 
@@ -102,33 +103,3 @@ printf("invalid values you entered \n");
 
 bfs(startIndex);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
