@@ -32,15 +32,16 @@ return data;
 void dfs(int startIndex){
 push(startIndex);
 
+printf("visited nodes : ");
 while(top != -1){
 int node = pop();
 
 if(!visited[node]){
 
 visited[node] = 1;
-printf("visited node : %d \t",nodevalues[node]);
+printf("%d \t",nodevalues[node]);
 
-for(int i = n-1; i <= 0; i--){
+for(int i = n-1; i >= 0; i--){
 if(graph[node][i] == 1 && !visited[i]){
 push(i);
 }
@@ -48,6 +49,7 @@ push(i);
 }
 }
 }
+
 
 void main(){
 
